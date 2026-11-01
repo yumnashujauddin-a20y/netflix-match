@@ -1,9 +1,10 @@
+import base64
 from pathlib import Path
 
 import pandas as pd
 import streamlit as st
 import hmac
-import base64
+
 
 from recommender import NetflixRecommender, evaluate_recommender, load_dataset
 
@@ -172,26 +173,25 @@ if not st.session_state.logged_in:
     bg_path = Path(__file__).parent / "assets" / "zgeTuV.jpg"
 
     if bg_path.exists():
-      bg_base64 = base64.b64encode(
-        bg_path.read_bytes()
-    ).decode("utf-8")
+        bg_base64 = base64.b64encode(
+           bg_path.read_bytes()
+        ).decode("utf-8")
+        st.markdown(f"""
+          <style>
+            .stApp {{
+            background:
+                linear-gradient(
+                  rgba(5,5,20,0.72),
+                  rgba(5,5,20,0.82)
+                ),
+                url("data:image/jpeg;base64,{bg_base64}");
 
-    st.markdown(f"""
-    <style>
-    .stApp {{
-        background:
-            linear-gradient(
-                rgba(5,5,20,0.72),
-                rgba(5,5,20,0.82)
-            ),
-            url("data:image/jpeg;base64,{bg_base64}");
-
-        background-size: cover !important;
-        background-position: center !important;
-        background-attachment: fixed !important;
-    }}
-    </style>
-    """, unsafe_allow_html=True)
+            background-size: cover !important;
+            background-position: center !important;
+            background-attachment: fixed !important;
+            }}
+        </style>
+        """, unsafe_allow_html=True)
 
     left, right = st.columns([1.08, 0.92], gap="large")
 
