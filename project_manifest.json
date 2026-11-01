@@ -1,0 +1,17 @@
+{
+  "project": "Netflix Match - Content-Based Recommendation System",
+  "dataset_file": "data/Dataset.csv",
+  "dataset_rows_raw": 8790,
+  "dataset_rows_after_cleaning": 8786,
+  "features_used": [
+    "listed_in",
+    "type",
+    "director",
+    "country",
+    "rating",
+    "release_year",
+    "duration"
+  ],
+  "model": "TF-IDF + cosine similarity",
+  "application": "Streamlit"
+}

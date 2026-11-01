@@ -1,0 +1,8 @@
+{
+  "titles_evaluated": 100,
+  "k": 5,
+  "precision_at_k_proxy": 0.966,
+  "mean_genre_overlap": 0.9192333333333333,
+  "note": "Proxy metrics use category overlap, not user ratings or viewing behavior.",
+  "dataset_rows": 8786
+}
